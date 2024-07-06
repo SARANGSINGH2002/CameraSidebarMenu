@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Arvo', serif;
+    font-family: 'League Spartan', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main_box{
+    background: url(photo.jpg);
+    height: 100vh; /*Whenever we want to set the div height equal to the height of the complete page*/
+    background-size: cover;
+}
+.btn_one i{
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    left: 16px;
+    line-height: 60px;
+    transition: all 0.3s linear;
+}
+
+.sidebar_menu{
+    position: fixed;
+    left: -350px;
+     /*We want to send this out of the screen*/
+    height: 100vh;
+    width: 300px;
+    background-color: rgba(255, 255, 255 ,0.1);
+    box-shadow: 0 0 6px rgba(255, 255, 255 ,0.5);
+    transition: all 0.3s linear;
+}
+
+.sidebar_menu .logo{
+    position: absolute;
+    width: 100%;
+    line-height: 60px;
+    box-shadow: 0 0 3px rgba(255, 255, 255 ,0.5);
+    height: 60px;
+}
+.sidebar_menu .logo a{
+    position: absolute;
+    left: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+.sidebar_menu .btn_two i{
+    color: grey;
+    font-size: 25px;
+    line-height: 60px;
+    position: absolute;
+    right: 15px;
+    /* opacity: 0; temporary screen se hata diya */
+}
+
+.sidebar_menu .menu{
+    color: wheat;
+    position: absolute;
+    width: 100%;
+    top: 80px;
+}
+
+.sidebar_menu .menu li{
+    margin-top: 6px;
+    padding: 15px 20px; /*top aur bottom se 10px aur left-right se 20px*/
+}
+
+.sidebar_menu .menu i,a {
+    color: wheat;
+    text-decoration: none;
+    font-size: 20px;
+}
+.sidebar_menu .menu i{
+    padding: 8px;
+}
+
+.sidebar_menu .social_media{
+    color: white;
+    opacity: 0.5;
+    position: absolute; /*absolute is with related to parent */
+    left: 25%;
+    bottom: 50px;
+}
+
+.sidebar_menu .social_media i{
+    color: white;
+    opacity: 0.5;
+    padding: 2.5px;
+}
+
+#check{
+    display: none;
+}
+
+.sidebar_menu .menu li:hover {
+    box-shadow: 0 0 6px rgba(255, 255, 255 ,0.5);
+}
+.btn_one i:hover{
+    font-size: 40px;
+}
+.btn_two i:hover{
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.sidebar_menu .social_media i:hover {
+    opacity: 3;
+    transform: scale(1.3);
+}
+
+
+#check:checked ~.sidebar_menu{  /* ~ symbol means sibling */
+    left: 0; /*jaise hi side-bar menu par click kiya...waise hi woh check ho gyi aur woh dikhne lag gaya (pehle humne usse -350px deh kar screen se bahar kiya tha,,,,aab 0px deh kar fir se wapas lekar aaye*/
+    
+    /*jaise hi woh 3 baar par click kiya waise hi checkbox check ho gaya aur jaise hi cross par click kitya waise hi woh box uncheck ho gaya. Isliye humne dono cross aur 3bar ko checkbox se link kiya tha */
+}
+
+#check:checked ~.btn_one i{
+    opacity: 0;
+}
+/* #check:checked ~.sidebar_menu btn_two i {
+    opacity: 4;
+} */
